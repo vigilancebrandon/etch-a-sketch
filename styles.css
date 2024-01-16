@@ -1,9 +1,12 @@
-.subDiv {
+.container {
   display: flex;
+  height: 100vh;
   flex-wrap: wrap;
-  height: auto;
-  width: auto;
+}
+
+.container > div {
+  height: 6.25vh;
+  width: 6.25vw;
   background-color: aqua;
-  border: solid, black;
-  border-width: 8px;
+  border: 1px solid black;
 }
