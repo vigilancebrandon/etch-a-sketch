@@ -10,13 +10,14 @@ makeNewGrid(50);
 
 function clearGrid() {
   for (const row of document.querySelectorAll(".row")) {
-    container.remove(row);
+    row.remove();
   }
 }
 
 function makeRows(gridSize) {
   for (let i = 0; i < gridSize; i++) {
     let row = document.createElement("div");
+    console.log(document.querySelector(".row"))
     container.appendChild(row);
     row.classList = "row";
   }
@@ -36,23 +37,11 @@ function makeCols(gridSize) {
 }
 
 function makeNewGrid(gridSize) {
+  clearGrid();
   makeRows(gridSize);
-  console.log(document.querySelectorAll(".row").length)
+  //console.log(document.querySelectorAll(".row").length)
   makeCols(gridSize);
 }
-
-/*function makeGrid(gridSize) {
-  for (let i = 0; i < gridSize; i++) {
-    let divRow = document.createElement("div");
-    for (let k = 0; k < gridSize; k++) {
-      let divCol = document.createElement("div");
-      divRow.appendChild(divCol);
-      divCol.classList = "col";
-      divCol.id = `${k}, ${i}`;
-    }
-    container.appendChild(divRow);
-    divRow.classList = "row";
-}}*/
 
 sizeBtn.onclick = () => {
   let gridSize = prompt("Please input an integer 10 to 100 for grid size.");
@@ -60,8 +49,7 @@ sizeBtn.onclick = () => {
     let gridSize = prompt("Whoops, looks like your number was too big or too small!\n" +
     "Please input an integer 10 to 100 for grid size.");
   }
-  console.log(gridSize)
-  clearGrid();
+  //clearGrid();
   makeNewGrid(gridSize);
 }
 
