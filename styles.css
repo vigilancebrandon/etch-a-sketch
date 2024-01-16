@@ -13,5 +13,6 @@
 
 .row > .col {
   width: 6.25%;
+  
   /*border: 0.5px solid black;*/
 }
