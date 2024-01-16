@@ -44,12 +44,10 @@ function makeNewGrid(gridSize) {
 }
 
 sizeBtn.onclick = () => {
-  let gridSize = prompt("Please input an integer 10 to 100 for grid size.");
-  if (10 > gridSize > 100) {
-    let gridSize = prompt("Whoops, looks like your number was too big or too small!\n" +
-    "Please input an integer 10 to 100 for grid size.");
+  let gridSize = prompt("Please input an integer 10 to 100 for grid size:");
+  if (gridSize > 100 || gridSize < 10) {
+    gridSize = prompt("Invalid input, please try again:");
   }
-  //clearGrid();
   makeNewGrid(gridSize);
 }
 
