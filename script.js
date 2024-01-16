@@ -39,6 +39,15 @@ function makeNewGrid(gridSize) {
   clearGrid();
   makeRows(gridSize);
   makeCols(gridSize);
+  addListeners();
+}
+
+function addListeners() {
+  for (col of document.querySelectorAll(".col")) {
+    col.addEventListener("mouseover", (event) => {
+      event.target.style.backgroundColor = 'black';
+    })
+  }
 }
 
 sizeBtn.onclick = () => {
@@ -47,11 +56,4 @@ sizeBtn.onclick = () => {
     gridSize = prompt("Invalid input, please try again:");
   }
   makeNewGrid(gridSize);
-}
-
-let colList = document.querySelectorAll(".col");
-for (col of colList) {
-  col.addEventListener("mouseover", (event) => {
-    event.target.style.backgroundColor = 'black';
-  })
 }
