@@ -17,7 +17,6 @@ function clearGrid() {
 function makeRows(gridSize) {
   for (let i = 0; i < gridSize; i++) {
     let row = document.createElement("div");
-    console.log(document.querySelector(".row"))
     container.appendChild(row);
     row.classList = "row";
   }
@@ -39,7 +38,6 @@ function makeCols(gridSize) {
 function makeNewGrid(gridSize) {
   clearGrid();
   makeRows(gridSize);
-  //console.log(document.querySelectorAll(".row").length)
   makeCols(gridSize);
 }
 
@@ -51,7 +49,9 @@ sizeBtn.onclick = () => {
   makeNewGrid(gridSize);
 }
 
-container.addEventListener("mouseover", (event) => {
-  event.target.style.backgroundColor = 'black';
-})
-
+let colList = document.querySelectorAll(".col");
+for (col of colList) {
+  col.addEventListener("mouseover", (event) => {
+    event.target.style.backgroundColor = 'black';
+  })
+}
