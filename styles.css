@@ -1,0 +1,7 @@
+.subDiv {
+  display: flex;
+  flex-wrap: wrap;
+  background-color: aqua;
+  border: solid, black;
+  border-width: 2px;
+}
