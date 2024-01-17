@@ -15,8 +15,6 @@ container.before(btnsDiv);
 btnsDiv.appendChild(sizeBtn);
 btnsDiv.appendChild(clearBtn);
 
-makeNewGrid(50);
-
 function clearGrid() {
   for (const row of document.querySelectorAll(".row")) {
     row.remove();
@@ -88,3 +86,5 @@ sizeBtn.addEventListener("click", () => {
 })
 
 clearBtn.addEventListener("click", clearGrid());
+
+makeNewGrid(50);
