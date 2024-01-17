@@ -61,7 +61,7 @@ function makeNewGrid(gridSize) {
 }
 
 function getRandomInt(range) {
-  return Math.floor(Math.random() * range)
+  return Math.floor(Math.random() * range);
 }
 
 function getRandRGB() {
@@ -71,10 +71,20 @@ function getRandRGB() {
   return `rgb(${r}, ${g}, ${b})`;
 }
 
-sizeBtn.onclick = () => {
-  let gridSize = prompt("Please input an integer 4 to 100 for grid size:");
-  if (gridSize > 100 || gridSize < 4) {
-    gridSize = prompt("Invalid input, please try again:");
+function getGridSize() {
+  let input = prompt("Please input an integer 2 to 100 for grid size:");
+  if (input === null) {
+    return;
+  } else if (input > 100 || input < 2) {
+    input = prompt("Invalid input, please try again:");
+  } else {
+    return input;
   }
-  makeNewGrid(gridSize);
 }
+
+sizeBtn.addEventListener("click", () => {
+  let gridSize = getGridSize();
+  makeNewGrid(gridSize);
+})
+
+clearBtn.addEventListener("click", clearGrid());
