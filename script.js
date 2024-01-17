@@ -73,8 +73,8 @@ function getRandRGB() {
 
 function getGridSize() {
   let input = prompt("Please input an integer 2 to 100 for grid size:");
-  if (input === null) {
-    return;
+  if (input === "") {
+    return 50;
   } else if (input > 100 || input < 2) {
     input = prompt("Invalid input, please try again:");
   } else {
