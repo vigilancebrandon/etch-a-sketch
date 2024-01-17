@@ -1,6 +1,5 @@
 * {
   font-family:'Courier New', Courier, monospace;
-  font-size: medium;
   font-weight: 800;
 }
 
@@ -12,14 +11,21 @@ body {
   background-color: slategray;
 }
 
+#container {
+  display: flex;
+  flex-direction: row;
+}
+
 #buttons-div {
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
+  justify-content: center;
+  align-items: center;
   gap: 40px;
+  padding: 50px;
 }
 
-.container {
+#grid-box {
   display: flex;
   height: 500px;
   width: 500px;
@@ -27,24 +33,24 @@ body {
   border: 1px solid black;
 }
 
-.container > .row {
+.row {
   display: flex;
   width: 100%;
   /*border: 0.5px solid purple;*/
 }
 
-.row > .col {
+.col {
   flex-grow: 1;
   width: 6.25%;
   /*border: 0.5px solid blue;*/
 }
 
 button {
-  margin: auto;
-  gap: 40px;
+  width: max-content;
   background-color: floralwhite;
   box-shadow: none;
   border: solid black 1px;
   border-radius: 0.5em;
   padding: 5px;
+  font-size: medium;
 }

@@ -1,19 +1,8 @@
 let body = document.querySelector("body");
-let btnsDiv = document.createElement("div");
-let sizeBtn = document.createElement("button");
-let clearBtn = document.createElement("button");
-let container = document.querySelector(".container");
-
-sizeBtn.classList = "btn";
-sizeBtn.textContent = "Change grid size";
-clearBtn.classList = "btn";
-clearBtn.textContent = "Clear";
-
-btnsDiv.id = "buttons-div";
-
-container.before(btnsDiv);
-btnsDiv.appendChild(sizeBtn);
-btnsDiv.appendChild(clearBtn);
+let btnsDiv = document.querySelector("#buttons-div");
+let sizeBtn = document.querySelector("#size-button");
+let clearBtn = document.querySelector("#clear-button");
+let gridBox = document.querySelector("#grid-box");
 
 function clearGrid() {
   for (const row of document.querySelectorAll(".row")) {
@@ -24,7 +13,7 @@ function clearGrid() {
 function makeRows(gridSize) {
   for (let i = 0; i < gridSize; i++) {
     let row = document.createElement("div");
-    container.appendChild(row);
+    gridBox.appendChild(row);
     row.classList = "row";
   }
 }
@@ -42,7 +31,7 @@ function makeCols(gridSize) {
   }
 }
 
-//Prevents coloring entire rows or entire container black, a bug from using event delegation
+//Prevents coloring entire rows or entire gridBox black, a bug from using event delegation
 function addListeners() {
   for (col of document.querySelectorAll(".col")) {
     col.addEventListener("mouseover", (event) => {
