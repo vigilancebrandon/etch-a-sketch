@@ -72,8 +72,8 @@ function getRandRGB() {
 }
 
 sizeBtn.onclick = () => {
-  let gridSize = prompt("Please input an integer 10 to 100 for grid size:");
-  if (gridSize > 100 || gridSize < 10) {
+  let gridSize = prompt("Please input an integer 4 to 100 for grid size:");
+  if (gridSize > 100 || gridSize < 4) {
     gridSize = prompt("Invalid input, please try again:");
   }
   makeNewGrid(gridSize);
