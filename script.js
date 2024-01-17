@@ -61,7 +61,7 @@ function getRandRGB() {
 function getGridSize() {
   let input = prompt("Please input an integer 2 to 100 for grid size:");
   if (input === "") {
-    return 50;
+    return null;
   } else if (input > 100 || input < 2) {
     input = prompt("Invalid input, please try again:");
   } else {
@@ -71,7 +71,12 @@ function getGridSize() {
 
 sizeBtn.addEventListener("click", () => {
   let gridSize = getGridSize();
-  makeNewGrid(gridSize);
+  if (gridSize === null) {
+    preventDefault()
+  }
+  else {
+    makeNewGrid(gridSize);
+  }
 })
 
 clearBtn.addEventListener("click", clearGrid());
