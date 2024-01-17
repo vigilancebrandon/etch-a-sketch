@@ -69,10 +69,10 @@ function getGridSize() {
   }
 }
 
-sizeBtn.addEventListener("click", () => {
+sizeBtn.addEventListener("click", (event) => {
   let gridSize = getGridSize();
   if (gridSize === null) {
-    preventDefault()
+    event.preventDefault()
   }
   else {
     makeNewGrid(gridSize);
