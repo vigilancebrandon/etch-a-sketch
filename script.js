@@ -1,8 +1,9 @@
-let body = document.querySelector("body");
-let btnsDiv = document.querySelector("#buttons-div");
-let sizeBtn = document.querySelector("#size-button");
-let clearBtn = document.querySelector("#clear-button");
-let gridBox = document.querySelector("#grid-box");
+const body = document.querySelector("body");
+const btnsDiv = document.querySelector("#buttons-div");
+const sizeBtn = document.querySelector("#size-button");
+const clearBtn = document.querySelector("#clear-button");
+const gridBox = document.querySelector("#grid-box");
+let gridSize = 50;
 
 function clearGrid() {
   for (const row of document.querySelectorAll(".row")) {
@@ -70,7 +71,7 @@ function getGridSize() {
 }
 
 sizeBtn.addEventListener("click", (event) => {
-  let gridSize = getGridSize();
+  gridSize = getGridSize();
   if (gridSize === null) {
     event.preventDefault()
   }
@@ -79,6 +80,9 @@ sizeBtn.addEventListener("click", (event) => {
   }
 })
 
-clearBtn.addEventListener("click", clearGrid());
+clearBtn.addEventListener("click", () => {
+  clearGrid();
+  makeNewGrid(gridSize);
+})
 
-makeNewGrid(50);
+makeNewGrid(gridSize);
