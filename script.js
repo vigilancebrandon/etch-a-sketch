@@ -1,10 +1,19 @@
+let body = document.querySelector("body");
+let btnsDiv = document.createElement("div");
 let sizeBtn = document.createElement("button");
-let container = document.querySelector(".container")
+let clearBtn = document.createElement("button");
+let container = document.querySelector(".container");
 
-sizeBtn.classList = "btn"
-sizeBtn.textContent = "Change grid size"
+sizeBtn.classList = "btn";
+sizeBtn.textContent = "Change grid size";
+clearBtn.classList = "btn";
+clearBtn.textContent = "Clear";
 
-container.before(sizeBtn);
+btnsDiv.id = "buttons-div";
+
+container.before(btnsDiv);
+btnsDiv.appendChild(sizeBtn);
+btnsDiv.appendChild(clearBtn);
 
 makeNewGrid(50);
 
