@@ -19,7 +19,9 @@ body {
 }
 
 .row > .col {
+  flex-grow: 1;
   width: 6.25%;
+  /*border: 0.5px solid blue;*/
 }
 
 button {
