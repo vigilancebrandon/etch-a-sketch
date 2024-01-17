@@ -35,6 +35,15 @@ function makeCols(gridSize) {
   }
 }
 
+//Prevents coloring entire rows or entire container black, a bug from using event delegation
+function addListeners() {
+  for (col of document.querySelectorAll(".col")) {
+    col.addEventListener("mouseover", (event) => {
+      event.target.style.backgroundColor = getRandRGB();
+    })
+  }
+}
+
 function makeNewGrid(gridSize) {
   clearGrid();
   makeRows(gridSize);
@@ -42,12 +51,15 @@ function makeNewGrid(gridSize) {
   addListeners();
 }
 
-function addListeners() {
-  for (col of document.querySelectorAll(".col")) {
-    col.addEventListener("mouseover", (event) => {
-      event.target.style.backgroundColor = 'black';
-    })
-  }
+function getRandomInt(range) {
+  return Math.floor(Math.random() * range)
+}
+
+function getRandRGB() {
+  let r = getRandomInt(256); //0 to 255
+  let g = getRandomInt(256);
+  let b = getRandomInt(256);
+  return `rgb(${r}, ${g}, ${b})`;
 }
 
 sizeBtn.onclick = () => {
