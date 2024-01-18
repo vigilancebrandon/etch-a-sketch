@@ -65,9 +65,8 @@ function getGridSize() {
     return null;
   } else if (input > 100 || input < 2) {
     input = prompt("Invalid input, please try again:");
-  } else {
-    return input;
   }
+  return input;
 }
 
 sizeBtn.addEventListener("click", (event) => {
